@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+
+struct SET {
+	char m[2];
+	char w[2];
+} set;
+
+int main() {
+	strcpy(set.w, "w");
+	strcpy(set.m, "m");
+
+	printf("m %s\n", set.m);
+	printf("w %s\n", set.w);
+
+	printf("%08x\n", set.m);
+	printf("%08x\n", set.w);
+
+	return 0;
+}

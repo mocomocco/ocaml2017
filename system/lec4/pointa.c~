@@ -1,0 +1,14 @@
+#include <stdio.h>
+ 
+void main()
+{
+    int a; /* 普通の変数の宣言 */ 
+    int *p;   /* ポインタ変数の宣言 */
+ 
+    a = 3;
+    printf("aのアドレスは，%p です¥n", &a);  
+ 
+    p = &a;
+    printf("ポインタ変数pの値（=aのアドレス）は，%p です¥n", p);  
+    printf("ポインタ変数pの指している値は，%d です¥n", *p);  
+}

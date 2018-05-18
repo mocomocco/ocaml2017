@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <unistd.h>
+
+
+int main(){
+  pid_t cid0=1,cid1=1;
+  char tmp[260];
+
+  cid0 = fork();					
+  if (cid0 != 0){cid1=fork();}
+
+  if(cid0 != 0 && cid1 != 0){//親だったら
+    printf("parent\n"); 
+  }
+ if(cid0 == 0 && cid1 == 1){//Aだったら
+   printf("A\n");
+    }
+ if(cid0 != 0 && cid1 == 0){//Bだったら
+   printf("B\n");  
+  } 
+}

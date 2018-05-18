@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+void func(int x) {
+	x += 1;
+	int m[100000];
+	printf("%d %p\n",x, func);
+	if (x > 200) {
+		return;
+	}
+	func(x);
+}
+
+int main() {
+	func(0);
+	return 0;
+}

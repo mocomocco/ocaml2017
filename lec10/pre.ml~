@@ -1,0 +1,13 @@
+type jikoku_t =
+Gozen of int
+|Gogo of int
+|Noon
+|Midnight
+let jikoku24 jikoku = match jikoku with
+Gozen (n) ->n
+|Gogo (n) ->n+12
+|Noon -> 12
+|Midnight -> 0
+
+type tree_t =Empty
+|Node of tree_t * int * tree_t

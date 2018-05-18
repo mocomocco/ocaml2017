@@ -1,0 +1,14 @@
+#include <stdio.h>
+int a=0;
+void func(int x) {
+	int m[2000000];
+	printf("%d %p\n",x, func);	
+}
+
+int main() {
+  for(a=0;a<5;a++){
+    printf("before func :%p\n\n",func);
+    func(0);
+    printf("after func :%p\n\n",func);
+}
+}

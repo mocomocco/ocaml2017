@@ -1,0 +1,6 @@
+#include<stdio.h>
+#define NUM 2000000
+int main(){
+  int a[NUM];
+  printf("a\n");
+}

@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+
+struct SET {
+	char w[2];
+	char m[2];
+} set;
+int i;
+int main() {
+  scanf("%s",set.w);
+  scanf("%s",set.m);
+  printf("\n");
+ printf("w %s\n", set.w);
+  printf("m %s\n", set.m);
+  for(i=0;i<5;i++)printf("set.w[%d] : %p\n", i,&set.w[i]);
+  for(i=0;i<5;i++)printf("set.m[%d] : %p\n", i,&set.m[i]);
+
+
+  return 0;
+}

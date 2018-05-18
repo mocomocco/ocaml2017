@@ -1,0 +1,39 @@
+type gakusei_t=
+{namae:string;(*名前*)
+tensuu:int;(*点数*)
+seiseki:string(*成績*)}
+
+let g1 = {namae="asai"; tensuu=70; seiseki="B"}
+let g2 = {namae="tanaka"; tensuu=90; seiseki="A"}
+let g3 = {namae="yamada"; tensuu=60; seiseki="C"}
+
+let gakusei_list =[g1;g2;g3]
+
+let rec tsuuchi name lst = 
+  let rec shougou name lst =
+    match lst with
+      [] -> None
+      |{namae=n;tensuu=t;seiseki=s}::rest ->
+         if n=name then Some(s)
+         else shougou name rest
+in match (shougou name lst) with
+  None -> "データがありません"
+  |Some(s)-> name^"さんの成績は "^s^" です"
+
+(*テスト*)
+let test1 = tsuuchi "tanaka" gakusei_list = "tanakaさんの成績は A です"
+
+exception Datanashi
+exception Urikire of string
+
+let f n = 
+   if n = 0 then raise Datanashi
+   else if n = 1 then raise (Urikire "tomato")
+   else n+1
+
+let g n = try
+           10+f n
+          with Datanashi -> 0
+let h n = try 
+           100+g n
+          with Urikire (s) ->String.length s

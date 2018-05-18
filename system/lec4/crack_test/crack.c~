@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+char tmp[3];
+char cmd[32];
+
+int main(){
+
+  strcpy(cmd,"ls");
+ 
+  scanf("%s",tmp);
+
+  system(cmd);
+}

@@ -1,0 +1,12 @@
+#include<stdio.h>
+
+int main(){
+  int lo;
+  int stack[5];
+
+  printf("loのアドレス     ：%p\n",&lo);
+for(lo=0;lo<5;lo++)
+printf("stack[%d]のアドレス  ：%p\n",lo,&stack[lo]);
+  printf("\n");
+
+}

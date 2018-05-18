@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+int main(){
+  FILE* fp;
+  int X,Y,i;
+  char a[10];
+  fp = fopen("report_sup","r");
+  
+  fseek(fp,-1*sizeof(char),SEEK_END);
+  fread(&X,sizeof(char),1,fp);
+  /*ファイルに書き込まれている数字はchar型として書き込まれているのでそれをint型に変換したい*/
+  /*itoaコマンドを使う方が良さそうだが、1~9の範囲内ならX=X-48とすれば成り立つので、とりあえずそうする*/
+  X=X-48;
+
+   printf("数字を入力してください\n");
+    scanf("%d",&Y);
+ 
+  /*  printf("%d回繰り返す\n",X);*/
+  for(i=0;i<X;i++){
+   
+    /* printf("%d字戻る\n",Y);*/
+    fseek(fp,-1*(Y+1)*sizeof(char),SEEK_CUR);
+    fread(a,sizeof(char),1,fp);
+
+    printf("%s\n",a);
+  }
+   
+  fclose(fp);
+}

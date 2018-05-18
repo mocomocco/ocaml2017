@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int i;
+void a();
+void b();
+
+int main(){
+  printf("main\n");
+  a();
+}
+
+void a(){
+  i++;
+  printf("a\n");
+  printf("%p\n",a);
+  if(i<131026)b();
+}
+
+void b(){
+  printf("b\n");
+  printf("%p\n",b);
+  a();
+}
